@@ -1,0 +1,407 @@
+@import "reset.scss";
+
+body {
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 110%;
+  /* or 15px */
+
+  letter-spacing: 0.05em;
+
+  /* Gray 2 */
+
+  color: #4F4F4F;
+}
+
+@mixin h1($fs:36px) {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $fs;
+  line-height: 100%;
+  /* or 36px */
+
+  letter-spacing: 0.05em;
+
+  color: #111111;
+
+}
+
+@mixin a($fs:18px) {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $fs;
+  line-height: 100%;
+  /* identical to box height, or 18px */
+
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Gray 3 */
+
+  color: #828282;
+}
+
+header,
+footer,
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .center {
+    width: 1360px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 40px;
+    box-sizing: border-box;
+  }
+}
+
+section {
+  height: 100vh;
+  min-height: 750px;
+}
+
+header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  nav {
+    width: 100%;
+
+    ul {
+      width: inherit;
+      display: flex;
+      justify-content: space-around;
+
+      li {
+        a {
+          @include a();
+          padding: 10px;
+
+        }
+
+        &:focus,
+        &:active,
+        &:hover,
+        &.active {
+          list-style: disc;
+          color: #2D75D9;
+
+          a {
+            color: #2D75D9;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+.section-1 {
+
+
+  .center {
+    height: inherit;
+    min-height: inherit;
+
+    background-image: url('../img/teacher.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+    .right-content {
+      width: 632px;
+      height: 254px;
+
+      justify-content: right;
+
+      h1 {
+        @include h1();
+      }
+
+      p {
+        margin-top: 50px;
+      }
+    }
+
+    .right-links {
+      width: 634px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .social {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0px 25px;
+
+        li {
+          a {
+            color: #BDBDBD;
+            text-decoration: none;
+
+            font-size: 36px;
+            padding: 5px 20px;
+
+          }
+
+          &:focus,
+          &:active,
+          &:hover,
+          &.active {
+            color: #2D75D9;
+
+            a {
+              color: #2D75D9;
+            }
+          }
+        }
+      }
+
+      .contacts {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          @include a();
+          color: #BDBDBD;
+          padding: 6px 0px;
+
+          i {
+            margin-right: 5px;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+.section-2 {
+  .center {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .content-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+
+    .right {
+      h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 100%;
+        /* identical to box height, or 48px */
+
+        color: #111111;
+      }
+
+      .schedule {
+        width: 700px;
+        padding: 5px;
+        box-sizing: border-box;
+
+        .schedule-head {
+          width: inherit;
+          display: flex;
+          justify-content: space-around;
+
+          p {
+            display: inline-block;
+            font-family: 'Montserrat',sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 100%;
+          }
+
+
+        }
+
+        .schedule-body {
+          width: inherit;
+
+          ul {
+            width: inherit;
+
+            li {
+              width: 100%;
+              list-style: none;
+              position: relative;
+
+              &:after {
+                content: attr(data-lesson);
+                position: absolute;
+                top: 40px;
+                left: -10px;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 100%;
+              }
+
+              .row {
+                display: flex;
+                justify-content: space-between;
+
+                a {
+                  display: block;
+                  width: 140px;
+                  height: 70px;
+                  background-color: #F2F2F2;
+                  margin: 7px;
+
+                  &.lesson {
+                    background-color: #2D75D9;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    text-align: right;
+                    text-decoration: none;
+
+                    p {
+                      font-family: Montserrat;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 36px;
+                      line-height: 100%;
+                      /* or 36px */
+                      color: #F2F2F2;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .left {
+
+      width: 387px;
+
+      h1 {
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 100%;
+        /* identical to box height, or 48px */
+
+
+        color: #111111;
+      }
+
+      form {
+        width: inherit;
+
+        .input-group {
+          width: inherit;
+          padding: 12px 0px;
+          box-sizing: border-box;
+          display: flex;
+
+          justify-content: space-around;
+
+          select {
+            padding: 18px;
+            width: inherit;
+            box-shadow: none;
+            -webkit-appearance: none;
+
+
+            background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right transparent;
+            background-position: calc(100% - 20px) center;
+
+            border: 1px solid #4F4F4F;
+            box-sizing: border-box;
+
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          button {
+            width: inherit;
+            padding: 18px;
+            box-sizing: border-box;
+            background: #2D75D9;
+            text-align: center;
+
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 100%;
+            color: #E0E0E0;
+            border: none;
+            cursor: pointer;
+          }
+
+          span {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 150%;
+          }
+
+          input[type=radio] {
+            display: none;
+
+            & + label {
+              font-family: 'Roboto', sans-serif;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 24px;
+              line-height: 150%;
+              text-transform: uppercase;
+            }
+
+            &:checked + label {
+              color: #2D75D9;
+            }
+
+            &:not(checked) + label {
+              color: #BDBDBD;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+}
