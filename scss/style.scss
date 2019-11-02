@@ -87,6 +87,15 @@ header {
       display: flex;
       justify-content: space-around;
 
+      @media (max-width: 990px) {
+        & {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          flex-direction: column;
+        }
+      }
+
       li {
         a {
           @include a();
@@ -113,6 +122,18 @@ header {
 
 
 .section-1 {
+  @media (max-width: 1100px) {
+    & {
+
+      height:670px;
+    }
+  }
+
+  @media (max-width: 990px) {
+    & {
+      height: auto;
+    }
+  }
 
 
   .center {
@@ -128,12 +149,40 @@ header {
     flex-wrap: wrap;
     flex-direction: column;
 
+    @media (max-width: 1100px) {
+      & {
+        background-size: 500px 500px;
+
+
+      }
+    }
+
+    @media (max-width: 990px) {
+      & {
+        width:100%;
+        background-position: center 100px;
+      }
+    }
 
     .right-content {
       width: 632px;
       height: 254px;
 
       justify-content: right;
+
+      @media (max-width: 1210px) {
+        & {
+          width: 450px;
+        }
+      }
+
+      @media (max-width: 990px) {
+        & {
+          width: 100%;
+          height: auto;
+          margin-top:600px;
+        }
+      }
 
       h1 {
         @include h1();
@@ -149,6 +198,15 @@ header {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+
+      @media (max-width: 990px) {
+        & {
+        width:100%;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top:50px;
+        }
+      }
 
       .social {
         display: flex;
@@ -200,6 +258,8 @@ header {
 
 
 .section-2 {
+  height: auto;
+
   .center {
 
     display: flex;
@@ -211,6 +271,12 @@ header {
       justify-content: space-between;
       width: 100%;
       flex-wrap: wrap;
+
+      @media (max-width: 1180px) {
+        & {
+          justify-content: space-around;
+        }
+      }
     }
 
 
@@ -230,6 +296,23 @@ header {
         width: 700px;
         padding: 5px;
         box-sizing: border-box;
+        transition: .3s;
+
+        @media (max-width: 1180px) {
+          & {
+            width: 500px;
+
+          }
+        }
+
+        @media (max-width: 1025px) {
+          & {
+            width: 400px;
+
+          }
+        }
+
+
 
         .schedule-head {
           width: inherit;
@@ -298,6 +381,13 @@ header {
                       line-height: 100%;
                       /* or 36px */
                       color: #F2F2F2;
+
+                      @media (max-width: 1025px) {
+                        & {
+                          font-size: 24px;
+
+                        }
+                      }
                     }
                   }
                 }
@@ -312,6 +402,8 @@ header {
     .left {
 
       width: 387px;
+
+
 
       h1 {
 
@@ -328,6 +420,8 @@ header {
 
       form {
         width: inherit;
+
+
 
         .input-group {
           width: inherit;
@@ -411,9 +505,18 @@ header {
 
 .section-3 {
   background-color: #333333;
+  min-height: 600px;
+
 
   .center {
     align-items: center;
+
+    @media (max-width: 1360px) {
+      & {
+        width: 100%;
+        padding: 0px;
+      }
+    }
 
     .timeline {
       width: 1000px;
@@ -423,6 +526,13 @@ header {
       padding: 50px;
       box-sizing: border-box;
       overflow: hidden;
+
+      @media (max-width: 1050px) {
+        & {
+          width: 100%;
+          padding: 50px 10px;
+        }
+      }
 
       &:after {
         content: '';
@@ -516,7 +626,8 @@ header {
 
 footer {
   background-color: #121212;
-  height: 85px;
+  height: auto;
+  min-height: 85px;
 
   .center {
     padding: 10px;
